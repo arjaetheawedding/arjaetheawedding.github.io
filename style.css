@@ -127,7 +127,7 @@ p { font-size: 1.1rem; line-height: 1.8; }
   margin-bottom: 15px;
 }
 
-/* CINEMATIC VIDEO FIX */
+/* CINEMATIC VIDEO */
 .cinematic-video {
   position: relative;
   width: 100%;
@@ -139,18 +139,18 @@ p { font-size: 1.1rem; line-height: 1.8; }
 
 .cinematic-video .bg-video {
   width: 100%;
-  height: auto; /* maintain aspect ratio */
-  max-height: 80vh; /* prevent video from overflowing screen */
+  height: auto;
+  max-height: 80vh;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.25);
   display: block;
   margin: auto;
   z-index: 1;
-  position: relative; /* remove absolute positioning */
+  position: relative;
   object-fit: cover;
 }
 
-/* Caption below video */
+/* Video caption */
 .video-caption {
   margin-top: 25px;
   background: rgba(0,0,0,0.6);
@@ -170,10 +170,47 @@ p { font-size: 1.1rem; line-height: 1.8; }
   line-height: 1.6;
 }
 
-/* Gallery 2x2 */
+/* VIDEO PLAY BUTTON */
+.video-play-button {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 90px;
+  height: 90px;
+  background: rgba(196, 139, 159, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-play-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-play-button:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: rgba(196, 139, 159, 0.85);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.video-play-button i {
+  color: white;
+  font-size: 38px;
+  margin-left: 3px;
+}
+
+/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -188,11 +225,8 @@ p { font-size: 1.1rem; line-height: 1.8; }
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* Responsive: stack images on small screens */
 @media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
+  .gallery { grid-template-columns: 1fr; }
 }
 
 /* GIFTS */
@@ -267,142 +301,82 @@ footer {
   text-align: center;
 }
 .loader-content h1 { font-size: 3rem; }
-/* CENTER PLAY BUTTON */
-.video-play-button {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  width: 80px;
-  height: 80px;
-  background: rgba(196, 139, 159, 0.8);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
 
-.video-play-button:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  background: rgba(196, 139, 159, 1);
-}
-
-.video-play-button i {
-  color: white;
-  font-size: 36px;
-  margin-left: 3px; /* perfect centering of the triangle */
-}
-.interstitial-img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  transition: transform 0.4s;
-}
-.interstitial-img:hover {
-  transform: scale(1.02);
-}
-.faq-container {
-  max-width: 800px;
-  margin: auto;
-  text-align: left;
-}
-
-.faq-item {
-  margin-bottom: 15px;
-  border-radius: 15px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
+/* FAQ & Entourage */
 .faq-question {
   width: 100%;
-  padding: 20px 25px;
+  padding: 15px 20px;
   text-align: left;
   background: #c48b9f;
   color: white;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  position: relative;
+  margin-bottom: 10px;
+  border-radius: 15px;
   transition: background 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.faq-question:hover {
-  background: #a35c73;
+.faq-question::after {
+  content: "\f107";
+  font-family: FontAwesome;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  transform: rotate(180deg);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  padding: 0 25px;
-  background: white;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
-.faq-answer p {
-  padding: 15px 0;
+.faq-answer.open .party-list-rows {
+  margin-top: 15px;
 }
+
+.party-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(196,139,159,0.2);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faq-answer.open .party-row {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fullwidth images */
 .fullwidth-image {
   width: 100%;
-  margin: 60px 0; /* space around image */
+  margin: 60px 0;
   position: relative;
   text-align: center;
 }
 
 .fullwidth-image .interstitial-img {
-  width: 100%; /* cover full width */
-  max-height: 100vh; /* optional, prevent too tall */
+  width: 100%;
+  max-height: 100vh;
   object-fit: cover;
-  border-radius: 0; /* full-width images usually don’t have rounded corners */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15); /* subtle shadow for premium feel */
+  border-radius: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   transition: transform 0.4s;
 }
 
 .fullwidth-image .interstitial-img:hover {
   transform: scale(1.02);
-}
-.category-title {
-  font-size: 1.5rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #a35c73; /* subtle accent */
-  border-bottom: 2px solid #c48b9f;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.party-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  margin-top: 15px;
-}
-
-.party-card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.party-card:hover {
-  transform: translateY(-5px);
-}
-
-.party-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 5px;
-  color: #444;
-}
-
-.party-card p {
-  font-size: 0.95rem;
-  color: #555;
 }

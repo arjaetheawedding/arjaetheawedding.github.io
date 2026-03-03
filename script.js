@@ -3,30 +3,25 @@ AOS.init({ duration: 1200, once: true });
 
 // COUNTDOWN
 const countdown = document.getElementById('countdown');
-
-// Set your wedding date and time (November 26, 2027 at 3:00 PM)
 const weddingDate = new Date("2027-11-26T15:00:00").getTime();
 
 function updateCountdown() {
-  const now = new Date().getTime(); // current time
-  const distance = weddingDate - now; // time difference in milliseconds
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
 
   if (distance <= 0) {
     countdown.innerHTML = "We're Married!";
     return;
   }
 
-  // Calculate time components
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display countdown
   countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
-// Update countdown every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
@@ -41,51 +36,83 @@ window.addEventListener('scroll', () => {
 // LOADER
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('loader').style.opacity = '0';
-    setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 1000);
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => { loader.style.display = 'none'; }, 1000);
   }, 1500);
 });
 
-// MUSIC TOGGLE (optional, no autoplay)
+// MUSIC TOGGLE
 const music = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-toggle');
 
 musicBtn.addEventListener('click', () => {
-  if(music.paused) {
+  if (music.paused) {
     music.play();
-    musicBtn.innerHTML = '<i class="fa fa-music"></i>'; // icon stays
+    musicBtn.innerHTML = '<i class="fa fa-music"></i>';
   } else {
     music.pause();
     musicBtn.innerHTML = '<i class="fa fa-volume-off"></i>';
   }
 });
+
+// VIDEO PLAY BUTTON WITH FADE + PULSE
 const video = document.getElementById('wedding-video');
 const playButton = document.getElementById('video-play-button');
 
-playButton.addEventListener('click', () => {
-  video.muted = false; // unmute if you want sound
-  video.play();         // start video
-  playButton.style.display = 'none'; // hide button
-  video.setAttribute('controls', ''); // show native controls
-});
-// FAQ Accordion
-const faqItems = document.querySelectorAll('.faq-item');
+function showPlayButton() {
+  playButton.classList.remove('hidden');
+}
 
-faqItems.forEach(item => {
-  const question = item.querySelector('.faq-question');
-  question.addEventListener('click', () => {
-    const answer = item.querySelector('.faq-answer');
-    if(answer.style.maxHeight){
+function hidePlayButton() {
+  playButton.classList.add('hidden');
+}
+
+playButton.addEventListener('click', () => {
+  video.muted = false;
+  video.play();
+  hidePlayButton();
+  video.setAttribute('controls', '');
+});
+
+video.addEventListener('pause', showPlayButton);
+video.addEventListener('ended', showPlayButton);
+video.addEventListener('play', hidePlayButton);
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+
+    // toggle active arrow
+    button.classList.toggle('active');
+
+    if (answer.classList.contains('open')) {
+      // close
       answer.style.maxHeight = null;
-      answer.style.padding = "0 25px";
+      answer.style.padding = "0 20px";
+      answer.classList.remove('open');
     } else {
-      // close all other open items
-      faqItems.forEach(i => {
-        i.querySelector('.faq-answer').style.maxHeight = null;
-        i.querySelector('.faq-answer').style.padding = "0 25px";
+      // close all others first
+      document.querySelectorAll('.faq-answer').forEach(a => {
+        a.style.maxHeight = null;
+        a.style.padding = "0 20px";
+        a.classList.remove('open');
+        a.previousElementSibling.classList.remove('active');
       });
-      answer.style.maxHeight = answer.scrollHeight + "px";
-      answer.style.padding = "15px 25px";
+
+      // open this
+      answer.style.maxHeight = answer.scrollHeight + 30 + "px"; // extra padding
+      answer.style.padding = "15px 20px";
+      answer.classList.add('open');
     }
+  });
+});
+
+// OPTIONAL: INTERSTITIAL IMAGE PARALLAX
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.interstitial-img').forEach(img => {
+    const speed = 0.05;
+    const offset = img.getBoundingClientRect().top;
+    img.style.transform = `translateY(${offset * speed}px) scale(1.02)`;
   });
 });
