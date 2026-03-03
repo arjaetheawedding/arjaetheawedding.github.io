@@ -435,8 +435,26 @@ footer {
 /* Make countdown responsive */
 @media (max-width: 600px) {
   .countdown {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row; /* force horizontal */
+    gap: 12px;
+    flex-wrap: wrap;    /* allow wrapping if necessary */
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 600px) {
+  .countdown-item {
+    min-width: 55px;
+    padding: 10px 15px;
+  }
+  .countdown-item .count {
+    font-size: 1.4rem;
+  }
+  .countdown-item .label {
+    font-size: 0.7rem;
+  }
+  .hero-title {
+    font-size: 2.5rem;
   }
 }
 /* HERO */
@@ -572,11 +590,6 @@ footer {
   100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity:0; }
 }
 
-/* Responsive countdown stacking */
-@media (max-width: 600px) {
-  .countdown { flex-direction: column; gap: 15px; }
-  .hero-title { font-size: 2.8rem; }
-}
 /* Vimeo container */
 .vimeo-container {
   position: relative;
