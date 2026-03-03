@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arjae & Thea | Wedding</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-content">
+      <h1>Arjae & Thea</h1>
+      <p>November 26, 2027</p>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="progress-bar"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="assets/images/cover.jpg" alt="Wedding Cover" class="hero-img">
+    <div class="overlay">
+      <h1 data-aos="fade-up">Arjae & Thea</h1>
+      <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
+      <p id="countdown" data-aos="fade-up" data-aos-delay="400"></p>
+      <a href="#rsvp" class="btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section" data-aos="fade-up">
+    <h2>Our Story</h2>
+    <p>
+      We met unexpectedly, became best friends, and found love in the simplest moments.
+      Through seasons of growth and faith, we discovered that we were meant to walk this life together.
+    </p>
+  </section>
+
+<!-- CINEMATIC VIDEO -->
+<section class="cinematic-video">
+  <video id="wedding-video" class="bg-video" muted>
+    <source src="assets/videos/wedding-film.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Custom Play Button -->
+  <div class="video-play-button" id="video-play-button">
+    <i class="fa fa-play"></i>
+  </div>
+
+  <div class="video-caption" data-aos="fade-up" data-aos-delay="200">
+    <h2>Our Love Story</h2>
+    <p>A glimpse into our journey together</p>
+  </div>
+</section>
+
+  <!-- GALLERY -->
+  <section class="section" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="assets/images/gallery1.jpg" alt="Gallery Image 1">
+      <img src="assets/images/gallery3.jpg" alt="Gallery Image 3">
+      <img src="assets/images/gallery4.jpg" alt="Gallery Image 4">
+      <img src="assets/images/gallery6.jpg" alt="Gallery Image 6">
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section class="section glass" data-aos="fade-up">
+    <h2>Dress Code</h2>
+    <p>Formal Attire</p>
+    <p>Please avoid wearing white or off-white tones.</p>
+  </section>
+
+  <!-- REGISTRY -->
+  <section class="section" data-aos="fade-up">
+    <h2>Registry & Gifts</h2>
+    <p>Your presence at our wedding is the greatest gift of all.</p>
+
+    <div class="gift-container">
+      <div class="bank-details">
+        <h3>Bank Transfer</h3>
+        <p><strong>Bank:</strong> BPI</p>
+        <p><strong>Account Name:</strong> Arjae Del Rosario</p>
+        <p><strong>Account Number:</strong> 1234 5678 9012</p>
+      </div>
+
+      <div>
+        <img src="assets/images/bank-qr.png" alt="Bank QR Code" class="qr-image">
+      </div>
+    </div>
+  </section>
+
+    <!-- ENTourage / WEDDING PARTY -->
+<section class="section glass" data-aos="fade-up">
+  <h2>Our Wedding Party</h2>
+  <div class="entourage-grid">
+    <div class="entourage-card">
+      <img src="assets/images/trishia.jpg" alt="Maid of Honor">
+      <h3>Trishia</h3>
+      <p>Maid of Honor</p>
+    </div>
+    <div class="entourage-card">
+      <img src="assets/images/adrian.jpg" alt="Best Man">
+      <h3>Adrian</h3>
+      <p>Best Man</p>
+    </div>
+    <div class="entourage-card">
+      <img src="assets/images/nicole.jpeg" alt="Bridesmaid">
+      <h3>Nicole</h3>
+      <p>Bridesmaid</p>
+    </div>
+    <div class="entourage-card">
+      <img src="assets/images/ditter.jpg" alt="Groomsman">
+      <h3>Ditter</h3>
+      <p>Groomsman</p>
+    </div>
+    <!-- add more if needed -->
+  </div>
+</section>
+
+    <!-- IMAGE BETWEEN Registry and Event Schedule -->
+<section class="fullwidth-image" data-aos="fade-up">
+  <img src="assets/images/gallery2.jpg" alt="Couple Image 1" class="interstitial-img">
+</section>
+
+  <!-- EVENT SCHEDULE -->
+  <section class="section glass" data-aos="fade-up">
+    <h2>Event Schedule</h2>
+
+    <div class="schedule">
+      <div class="event-card">
+        <img src="assets/images/church.jpg" alt="Church Location">
+        <h3>Ceremony</h3>
+        <p>3:00 PM</p>
+        <p>
+          Parish of the Immaculate Heart of Mary<br>
+          Antipolo City, Rizal
+        </p>
+        <a href="https://www.google.com/maps?q=Parish+of+the+Immaculate+Heart+of+Mary+Antipolo" target="_blank" class="btn-small">
+          View Map
+        </a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/images/reception.jpg" alt="Reception Location">
+        <h3>Reception</h3>
+        <p>6:00 PM</p>
+        <p>
+          The Garden Hive Events Place<br>
+          Antipolo City, Rizal
+        </p>
+        <a href="https://maps.app.goo.gl/sYUdD5PjLdVrB3ey9" target="_blank" class="btn-small">
+          View Map
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- IMAGE BETWEEN Event Schedule and FAQ -->
+<section class="fullwidth-image" data-aos="fade-up">
+  <img src="assets/images/gallery5.jpg" alt="Couple Image 2" class="interstitial-img">
+</section>
+
+  <!-- FAQ -->
+<section class="section glass" data-aos="fade-up">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">What is the dress code?</button>
+      <div class="faq-answer">
+        <p>Formal attire is preferred. Please avoid white or off-white tones.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I bring a plus one?</button>
+      <div class="faq-answer">
+        <p>Please RSVP individually. Plus ones are allowed only if indicated in the invitation.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Where should I park?</button>
+      <div class="faq-answer">
+        <p>Parking is available at the venue. Follow the signs for guest parking areas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="section rsvp-section" data-aos="fade-up">
+    <h2>RSVP</h2>
+    <a href="https://forms.gle/hrAmqvdcCH5WxZmt9" target="_blank" class="btn">
+      Confirm Attendance
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>With love, Arjae & Thea</p>
+  </footer>
+
+  <!-- MUSIC BUTTON -->
+  <button id="music-toggle" aria-label="Toggle Music">
+    <i class="fa fa-music"></i>
+  </button>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="assets/music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
