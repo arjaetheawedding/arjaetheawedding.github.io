@@ -435,26 +435,28 @@ footer {
 /* Make countdown responsive */
 @media (max-width: 600px) {
   .countdown {
-    flex-direction: row; /* force horizontal */
-    gap: 12px;
-    flex-wrap: wrap;    /* allow wrapping if necessary */
+    flex-direction: row;
+    flex-wrap: nowrap;          /* ❗ prevent wrapping */
     justify-content: center;
-    margin-top: 15px;
+    gap: 6px;                   /* smaller gap */
   }
-}
-@media (max-width: 600px) {
+
   .countdown-item {
-    min-width: 55px;
-    padding: 10px 15px;
+    flex: 1;                    /* auto shrink evenly */
+    min-width: 0;               /* allow shrinking */
+    padding: 8px 6px;           /* reduce padding */
   }
+
   .countdown-item .count {
-    font-size: 1.4rem;
+    font-size: 1rem;          /* smaller number */
   }
+
   .countdown-item .label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;         /* smaller label */
   }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 }
 /* HERO */
