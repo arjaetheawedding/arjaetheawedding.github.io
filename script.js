@@ -72,6 +72,7 @@ musicBtn.addEventListener('click', () => {
 });
 
 // VIDEO PLAY BUTTON WITH FADE + PULSE
+/*
 const video = document.getElementById('wedding-video');
 const playButton = document.getElementById('video-play-button');
 
@@ -93,6 +94,7 @@ playButton.addEventListener('click', () => {
 video.addEventListener('pause', showPlayButton);
 video.addEventListener('ended', showPlayButton);
 video.addEventListener('play', hidePlayButton);
+*/
 
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
@@ -130,4 +132,7 @@ window.addEventListener('scroll', () => {
     const offset = img.getBoundingClientRect().top;
     img.style.transform = `translateY(${offset * speed}px) scale(1.02)`;
   });
+});
+document.querySelector('.youtube-thumb').addEventListener('click', () => {
+  window.open('https://www.youtube.com/watch?v=7jae0MwePuI', '_blank');
 });
