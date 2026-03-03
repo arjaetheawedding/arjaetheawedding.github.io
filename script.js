@@ -2,7 +2,8 @@
 AOS.init({ duration: 1200, once: true });
 
 // COUNTDOWN
-const countdown = document.getElementById('countdown');
+const countdownItems = document.querySelectorAll('.countdown-item .count');
+const labels = ['Days','Hours','Minutes','Seconds'];
 const weddingDate = new Date("2027-11-26T15:00:00").getTime();
 
 function updateCountdown() {
@@ -10,20 +11,34 @@ function updateCountdown() {
   const distance = weddingDate - now;
 
   if (distance <= 0) {
-    countdown.innerHTML = "We're Married!";
+    document.getElementById('countdown').innerHTML = "<div>We're Married!</div>";
     return;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
 
-  countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  const values = [days, hours, minutes, seconds];
+  countdownItems.forEach((item, i) => item.textContent = values[i]);
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// FLOATING PARTICLES
+const particlesContainer = document.querySelector('.particles');
+
+for (let i = 0; i < 30; i++) {
+  const particle = document.createElement('div');
+  particle.style.left = Math.random() * 100 + 'vw';
+  particle.style.animationDuration = 8 + Math.random() * 6 + 's';
+  particle.style.width = 4 + Math.random() * 6 + 'px';
+  particle.style.height = particle.style.width;
+  particle.style.opacity = Math.random();
+  particlesContainer.appendChild(particle);
+}
 
 // SCROLL PROGRESS
 window.addEventListener('scroll', () => {

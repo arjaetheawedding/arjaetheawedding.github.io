@@ -380,3 +380,198 @@ footer {
 .fullwidth-image .interstitial-img:hover {
   transform: scale(1.02);
 }
+/* HERO COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.countdown-item {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 20px;
+  min-width: 70px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.2);
+}
+
+.countdown-item .count {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.countdown-item .label {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #f8f8f8;
+  margin-top: 3px;
+}
+
+/* Adjust overlay spacing so countdown won't block RSVP */
+.overlay {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+  color: white;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Make countdown responsive */
+@media (max-width: 600px) {
+  .countdown {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  animation: kenburns 30s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* Ken Burns effect */
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0,0); }
+  100% { transform: scale(1.05) translate(10px,10px); }
+}
+
+/* Overlay */
+.overlay {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  gap: 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.75));
+  z-index: 1;
+  padding: 0 15px;
+}
+
+/* Hero title animation */
+.hero-title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  z-index: 2;
+}
+
+.countdown-item {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding: 15px 22px;
+  border-radius: 20px;
+  min-width: 70px;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+}
+
+.countdown-item .count {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  animation: countAnim 0.5s ease;
+}
+
+@keyframes countAnim {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.countdown-item .label {
+  font-size: 0.85rem;
+  color: #f8f8f8;
+  margin-top: 3px;
+  letter-spacing: 1px;
+}
+
+/* RSVP button upgrade */
+.hero-btn {
+  padding: 18px 50px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #c48b9f, #a35c73);
+  box-shadow: 0 15px 35px rgba(196,139,159,0.5);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 45px rgba(196,139,159,0.7);
+}
+
+/* Floating particles behind text */
+.particles {
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particles div {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0) scale(0.5); opacity:0.1; }
+  50% { opacity:0.6; }
+  100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity:0; }
+}
+
+/* Responsive countdown stacking */
+@media (max-width: 600px) {
+  .countdown { flex-direction: column; gap: 15px; }
+  .hero-title { font-size: 2.8rem; }
+}

@@ -31,16 +31,28 @@
   <!-- SCROLL PROGRESS BAR -->
   <div id="progress-bar"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="assets/images/cover.jpg" alt="Wedding Cover" class="hero-img">
-    <div class="overlay">
-      <h1 data-aos="fade-up">Arjae & Thea</h1>
-      <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
-      <p id="countdown" data-aos="fade-up" data-aos-delay="400"></p>
-      <a href="#rsvp" class="btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
+<!-- HERO -->
+<section class="hero">
+  <img src="assets/images/cover.jpg" alt="Wedding Cover" class="hero-img">
+
+  <!-- Floating particles container -->
+  <div class="particles"></div>
+
+  <div class="overlay">
+    <h1 class="hero-title" data-aos="fade-up">Arjae & Thea</h1>
+    <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
+
+    <!-- Countdown wrapper with styled items -->
+    <div id="countdown" class="countdown" data-aos="fade-up" data-aos-delay="400">
+      <div class="countdown-item"><span class="count">0</span><span class="label">Days</span></div>
+      <div class="countdown-item"><span class="count">0</span><span class="label">Hours</span></div>
+      <div class="countdown-item"><span class="count">0</span><span class="label">Minutes</span></div>
+      <div class="countdown-item"><span class="count">0</span><span class="label">Seconds</span></div>
     </div>
-  </section>
+
+    <a href="#rsvp" class="btn hero-btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
+  </div>
+</section>
 
   <!-- OUR STORY -->
   <section class="section" data-aos="fade-up">
