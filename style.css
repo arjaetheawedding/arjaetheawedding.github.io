@@ -434,29 +434,34 @@ footer {
 
 /* Make countdown responsive */
 @media (max-width: 600px) {
+
   .countdown {
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;          /* ❗ prevent wrapping */
-    justify-content: center;
-    gap: 6px;                   /* smaller gap */
+    flex-wrap: nowrap;
+    justify-content: space-between;  /* distribute evenly */
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 6px;
+    padding: 0 10px; /* prevent edge cutting */
+    box-sizing: border-box;
   }
 
   .countdown-item {
-    flex: 1;                    /* auto shrink evenly */
-    min-width: 0;               /* allow shrinking */
-    padding: 8px 6px;           /* reduce padding */
+    flex: 1 1 0;       /* allow shrinking */
+    min-width: 0;      /* VERY IMPORTANT */
+    padding: 8px 4px;  /* reduce side padding */
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .countdown-item .count {
-    font-size: 1rem;          /* smaller number */
+    font-size: 1.1rem;
   }
 
   .countdown-item .label {
-    font-size: 0.65rem;         /* smaller label */
-  }
-
-  .hero-title {
-    font-size: 2.3rem;
+    font-size: 0.65rem;
   }
 }
 /* HERO */
@@ -473,6 +478,10 @@ footer {
   position: absolute;
   animation: kenburns 30s ease-in-out infinite alternate;
   z-index: 0;
+}
+
+.hero-title {
+  font-size: 2.3rem;
 }
 
 /* Ken Burns effect */
