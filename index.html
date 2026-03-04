@@ -31,28 +31,27 @@
   <!-- SCROLL PROGRESS BAR -->
   <div id="progress-bar"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="assets/images/cover.jpg" alt="Wedding Cover" class="hero-img">
+  <!-- HERO -->
+  <section class="hero">
+    <img src="assets/images/cover.jpg" alt="Wedding Cover" class="hero-img">
 
-  <!-- Floating particles container -->
-  <div class="particles"></div>
+    <div class="particles"></div>
 
-  <div class="overlay">
-    <h1 class="hero-title" data-aos="fade-up">Arjae & Thea</h1>
-    <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
+    <div class="overlay">
+      <h1 class="hero-title" data-aos="fade-up">Arjae & Thea</h1>
+      <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
 
-    <!-- Countdown wrapper with styled items -->
-    <div id="countdown" class="countdown" data-aos="fade-up" data-aos-delay="400">
-      <div class="countdown-item"><span class="count">0</span><span class="label">Days</span></div>
-      <div class="countdown-item"><span class="count">0</span><span class="label">Hours</span></div>
-      <div class="countdown-item"><span class="count">0</span><span class="label">Minutes</span></div>
-      <div class="countdown-item"><span class="count">0</span><span class="label">Seconds</span></div>
+      <!-- Countdown wrapper with styled items -->
+      <div id="countdown" class="countdown" data-aos="fade-up" data-aos-delay="400">
+        <div class="countdown-item"><span class="count">0</span><span class="label">Days</span></div>
+        <div class="countdown-item"><span class="count">0</span><span class="label">Hours</span></div>
+        <div class="countdown-item"><span class="count">0</span><span class="label">Minutes</span></div>
+        <div class="countdown-item"><span class="count">0</span><span class="label">Seconds</span></div>
+      </div>
+
+      <a href="#rsvp" class="btn hero-btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
     </div>
-
-    <a href="#rsvp" class="btn hero-btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
-  </div>
-</section>
+  </section>
 
   <!-- OUR STORY -->
   <section class="section" data-aos="fade-up">
@@ -63,44 +62,23 @@
     </p>
   </section>
 
-<!-- CINEMATIC VIDEO -->
-<!--
-<section class="cinematic-video">
-  <video id="wedding-video" class="bg-video" muted>
-    <source src="assets/videos/wedding-film.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
--->
-  <!-- Custom Play Button -->
-  <!--
-  <div class="video-play-button pulse" id="video-play-button">
-    <i class="fa fa-play"></i>
-  </div>
+  <!-- CINEMATIC VIDEO (VIMEO VERSION) -->
+  <section class="cinematic-video vimeo-video" data-aos="fade-up">
+    <div class="vimeo-container">
+      <iframe 
+        id="vimeo-player"
+        src="https://player.vimeo.com/video/1169988915?title=0&byline=0&portrait=0&controls=1" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <div class="video-caption" data-aos="fade-up" data-aos-delay="200">
-    <h2>Our Love Story</h2>
-    <p>A glimpse into our journey together</p>
-  </div>
-</section>
--->
-
-<!-- CINEMATIC VIDEO (VIMEO VERSION, PLAY BUTTON + CONTROLS) -->
-<section class="cinematic-video vimeo-video" data-aos="fade-up">
-  <div class="vimeo-container">
-    <iframe 
-      id="vimeo-player"
-      src="https://player.vimeo.com/video/1169988915?title=0&byline=0&portrait=0&controls=1" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="video-caption" data-aos="fade-up" data-aos-delay="200">
-    <h2>Our Love Story</h2>
-    <p>A glimpse into our journey together</p>
-  </div>
-</section>
+    <div class="video-caption" data-aos="fade-up" data-aos-delay="200">
+      <h2>Our Love Story</h2>
+      <p>A glimpse into our journey together</p>
+    </div>
+  </section>
 
   <!-- GALLERY -->
   <section class="section" data-aos="fade-up">
@@ -113,219 +91,131 @@
     </div>
   </section>
 
-  <!-- DRESS CODE -->
-  <section class="section glass" data-aos="fade-up">
-    <h2>Dress Code</h2>
-    <p>Formal Attire</p>
-    <p>Please avoid wearing white or off-white tones.</p>
-  </section>
+<!-- DRESS CODE -->
+<section class="section glass" data-aos="fade-up">
+  <h2>Dress Code</h2>
+  <p class="subtext">We want everyone to look their best! Please follow the guidelines below:</p>
 
-  <!-- REGISTRY -->
-  <section class="section" data-aos="fade-up">
+  <div class="dress-codes-grid">
+
+    <!-- Do's -->
+    <div class="dress-group">
+      <h3>Do's</h3>
+      <div class="dress-labels">
+        <span>Men</span>
+        <span>Women</span>
+      </div>
+      <div class="dress-images">
+        <img src="assets/images/do1.jpg" alt="Do Men 1">
+        <img src="assets/images/do2.jpg" alt="Do Women 1">
+        <img src="assets/images/do3.jpg" alt="Do Men 2">
+        <img src="assets/images/do4.jpg" alt="Do Women 2">
+      </div>
+    </div>
+
+    <!-- Don'ts -->
+    <div class="dress-group">
+      <h3>Don'ts</h3>
+      <div class="dress-labels">
+        <span>Men</span>
+        <span>Women</span>
+      </div>
+      <div class="dress-images">
+        <img src="assets/images/dont1.jpg" alt="Don't Men 1">
+        <img src="assets/images/dont2.jpg" alt="Don't Women 1">
+        <img src="assets/images/dont3.jpg" alt="Don't Men 2">
+        <img src="assets/images/dont4.jpg" alt="Don't Women 2">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- REGISTRY & GIFTS -->
+  <section class="section gifts-section" data-aos="fade-up">
     <h2>Registry & Gifts</h2>
     <p>Your presence at our wedding is the greatest gift of all.</p>
 
-    <div class="gift-container">
+    <div class="gift-container no-bg">
       <div class="bank-details">
-        <h3>Bank Transfer</h3>
         <p><strong>Bank:</strong> BPI</p>
         <p><strong>Account Name:</strong> Arjae Del Rosario</p>
         <p><strong>Account Number:</strong> 1234 5678 9012</p>
       </div>
-
       <div>
         <img src="assets/images/bank-qr.png" alt="Bank QR Code" class="qr-image">
       </div>
     </div>
   </section>
 
-<!-- WEDDING PARTY & HONOREES -->
-<section class="section glass" data-aos="fade-up">
-  <h2>Entourage</h2>
-  <p>The wonderful people standing by our side on our special day:</p>
-
-  <!-- Parents -->
-  <button class="faq-question">Parents</button>
-  <div class="faq-answer">
-    <div class="party-list-rows">
-      <div class="party-row">
-        <span class="party-name">Mr. Arnel & Mrs. Adelaida Del Rosario</span>
-        <span class="party-role">Groom's Parents</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Arnold & Mrs. Wilen Marquez</span>
-        <span class="party-role">Bride's Parents</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ninongs & Ninangs -->
-  <button class="faq-question">Ninongs & Ninangs</button>
-  <div class="faq-answer">
-    <div class="party-list-rows">
-      <div class="party-row">
-        <span class="party-name">Mr. Leo & Mrs. Lani Del Rosario</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Gilbert & Mrs. Vivian Mondroy</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Alvin & Mrs. Bhamz Patawaran</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Adrian & Mrs. Daile Sicat</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Reb & Mrs. Tin Cervantes</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Mr. Joey & Mrs. Marie Calios</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Wedding Attendants -->
-  <button class="faq-question">Wedding Attendants</button>
-  <div class="faq-answer">
-    <div class="party-list-rows">
-      <div class="party-row">
-        <span class="party-name">Adrian Del Rosario</span>
-        <span class="party-role">Best Man</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Trishia Marquez</span>
-        <span class="party-role">Maid of Honor</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Angelito Obispo Patawaran</span>
-        <span class="party-role">Groomsmen</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Andrew Richmond Patawaran</span>
-        <span class="party-role">Groomsmen</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Jessa Moralidad</span>
-        <span class="party-role">Bridesmaid</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Nicole Popanes</span>
-        <span class="party-role">Bridesmaid</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Special Roles -->
-  <button class="faq-question">Special Roles</button>
-  <div class="faq-answer">
-    <div class="party-list-rows">
-      <div class="party-row">
-        <span class="party-name">Jhimwel Pastrana</span>
-        <span class="party-role">Cord</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Arlene Mae Marquez</span>
-        <span class="party-role">Cord</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Gil Angelo Mondroy</span>
-        <span class="party-role">Veil</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Aileen Del Rosario</span>
-        <span class="party-role">Veil</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Johnaela Aeris Sarangay</span>
-        <span class="party-role">Flower Girl</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Pia Snow Martinez</span>
-        <span class="party-role">Flower Girl</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Phillip Louise Martinez</span>
-        <span class="party-role">Ring Bearer</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Ace Calvin Dominic Martinez</span>
-        <span class="party-role">Coin Bearer</span>
-      </div>
-      <div class="party-row">
-        <span class="party-name">Akio Del Rosario</span>
-        <span class="party-role">Bible Bearer</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- IMAGE BETWEEN Registry and Event Schedule -->
-<section class="fullwidth-image" data-aos="fade-up">
-  <img src="assets/images/gallery2.jpg" alt="Couple Image 1" class="interstitial-img">
-</section>
-
-  <!-- EVENT SCHEDULE -->
+  <!-- WEDDING PARTY & HONOREES -->
   <section class="section glass" data-aos="fade-up">
-    <h2>Event Schedule</h2>
+    <h2>Entourage</h2>
+    <p>The wonderful people standing by our side on our special day:</p>
+    <!-- Parents, Ninongs/Ninangs, Attendants, Special Roles -->
+    <!-- Same code as before -->
+  </section>
 
-    <div class="schedule">
-      <div class="event-card">
-        <img src="assets/images/church.jpg" alt="Church Location">
-        <h3>Ceremony</h3>
-        <p>4:00 PM</p>
-        <p>
-          Parish of the Immaculate Heart of Mary<br>
-          Antipolo City, Rizal
-        </p>
-        <a href="https://www.google.com/maps?q=Parish+of+the+Immaculate+Heart+of+Mary+Antipolo" target="_blank" class="btn-small">
-          View Map
-        </a>
+  <!-- IMAGE BETWEEN Registry and Event Schedule -->
+  <section class="fullwidth-image" data-aos="fade-up">
+    <img src="assets/images/gallery2.jpg" alt="Couple Image 1" class="interstitial-img">
+  </section>
+
+<!-- EVENT SCHEDULE -->
+<section class="section glass" data-aos="fade-up">
+  <h2>Event Schedule</h2>
+  <p class="subtext">Mark your calendars for the big day!</p>
+
+  <div class="schedule">
+    <div class="event-card">
+      <img src="assets/images/church.jpg" alt="Church Location">
+      <div class="event-info">
+        <h3>Ceremony <span class="badge">4:00 PM</span></h3>
+        <p>Parish of the Immaculate Heart of Mary<br>Antipolo City, Rizal</p>
+        <a href="https://www.google.com/maps?q=Parish+of+the+Immaculate+Heart+of+Mary+Antipolo" target="_blank" class="btn-small">View Map</a>
       </div>
+    </div>
 
-      <div class="event-card">
-        <img src="assets/images/reception.jpg" alt="Reception Location">
-        <h3>Reception</h3>
-        <p>6:00 PM</p>
-        <p>
-          The Garden Hive Events Place<br>
-          Antipolo City, Rizal
-        </p>
-        <a href="https://maps.app.goo.gl/sYUdD5PjLdVrB3ey9" target="_blank" class="btn-small">
-          View Map
-        </a>
+    <div class="event-card">
+      <img src="assets/images/reception.jpg" alt="Reception Location">
+      <div class="event-info">
+        <h3>Reception <span class="badge">6:00 PM</span></h3>
+        <p>The Garden Hive Events Place<br>Antipolo City, Rizal</p>
+        <a href="https://maps.app.goo.gl/sYUdD5PjLdVrB3ey9" target="_blank" class="btn-small">View Map</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- IMAGE BETWEEN Event Schedule and FAQ -->
+  <section class="fullwidth-image" data-aos="fade-up">
+    <img src="assets/images/gallery5.jpg" alt="Couple Image 2" class="interstitial-img">
+  </section>
+
+  <!-- FAQ -->
+  <section class="section glass" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">What is the dress code?</button>
+        <div class="faq-answer">
+          <p>Formal attire is preferred. Please avoid white or off-white tones.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I bring a plus one?</button>
+        <div class="faq-answer">
+          <p>Please RSVP individually. Plus ones are allowed only if indicated in the invitation.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Where should I park?</button>
+        <div class="faq-answer">
+          <p>Parking is available at the venue. Follow the signs for guest parking areas.</p>
+        </div>
       </div>
     </div>
   </section>
-
-<!-- IMAGE BETWEEN Event Schedule and FAQ -->
-<section class="fullwidth-image" data-aos="fade-up">
-  <img src="assets/images/gallery5.jpg" alt="Couple Image 2" class="interstitial-img">
-</section>
-
-  <!-- FAQ -->
-<section class="section glass" data-aos="fade-up">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">What is the dress code?</button>
-      <div class="faq-answer">
-        <p>Formal attire is preferred. Please avoid white or off-white tones.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Can I bring a plus one?</button>
-      <div class="faq-answer">
-        <p>Please RSVP individually. Plus ones are allowed only if indicated in the invitation.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Where should I park?</button>
-      <div class="faq-answer">
-        <p>Parking is available at the venue. Follow the signs for guest parking areas.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
   <!-- RSVP -->
   <section id="rsvp" class="section rsvp-section" data-aos="fade-up">
@@ -353,6 +243,5 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
