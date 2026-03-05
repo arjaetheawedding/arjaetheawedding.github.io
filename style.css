@@ -828,31 +828,75 @@ scroll-behavior:smooth;
 }
 
 /* On mobile, make left/right images touch edges */
-/* SWIPER/GALLERY EDGE-TO-EDGE FIX */
+/* SWIPER/GALLERY FIX FOR EDGE-TO-EDGE ON MOBILE */
+/* On mobile, make left/right images touch edges */
+/* SWIPER/GALLERY FIX FOR EDGE-TO-EDGE ON MOBILE */
+/* --- GALLERY FIX: No left/right gaps, 2 images full width --- */
+/* SWIPER / GALLERY */
+.swiper {
+  width: 100%;         /* full width of container on desktop */
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-slide {
+  flex: 0 0 50%;      /* 2 slides per view on desktop */
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;       /* preserve aspect ratio */
+  object-fit: cover;  /* fill width of slide */
+  display: block;
+  border-radius: 0;    /* sharp corners */
+}
+
+/* Pagination & Navigation */
+.swiper-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* MOBILE FIX: EDGE-TO-EDGE */
 @media (max-width: 768px) {
   .swiper {
-    padding: 0 !important;        /* remove swiper padding */
-    margin: 0 !important;         /* remove swiper margin */
-    width: 100vw;                  /* full viewport width */
+    width: 100vw;      /* full viewport width */
+    margin: 0;
+    padding: 0;
   }
 
   .swiper-wrapper {
-    margin-left: 0 !important;    /* remove extra left margin */
-    margin-right: 0 !important;   /* remove extra right margin */
+    margin: 0;
+    padding: 0;
   }
 
   .swiper-slide {
-    width: 50% !important;        /* 2 images side by side */
-    padding: 0 !important;        /* no internal padding */
-    margin: 0 !important;         /* no extra margin */
+    flex: 0 0 50%;      /* 2 slides per view */
+    margin: 0;
+    padding: 0;
   }
 
   .swiper-slide img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 0;             /* sharp 4 corners */
-    display: block;
+    border-radius: 0;
   }
 }
 

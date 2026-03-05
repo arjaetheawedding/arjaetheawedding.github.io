@@ -288,11 +288,11 @@
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-  const gallerySwiper = new Swiper('.gallery-swiper', {
-  slidesPerView: 2,       // always 2 images
-  spaceBetween: 0,        // no gap
+  const swiper = new Swiper('.swiper', {
+  slidesPerView: 2,       // default 2 images per view
+  spaceBetween: 0,        // no space between slides
   loop: true,
-  slidesPerGroup: 1,
+  slidesPerGroup: 1,      // swipe 1 slide at a time
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -302,9 +302,14 @@
     clickable: true,
   },
   breakpoints: {
-    0: { slidesPerView: 2 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 2 }
+    0: {
+      slidesPerView: 2,   // mobile: 2 images per view
+      spaceBetween: 0,
+    },
+    769: {
+      slidesPerView: 2,   // desktop: 2 images per view
+      spaceBetween: 0,
+    }
   }
 });
 </script>
