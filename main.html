@@ -16,6 +16,9 @@
   <!-- AOS Animation -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
+  <!-- Gallery: Swipe left/right -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 
@@ -83,15 +86,24 @@
   </section>
 
   <!-- GALLERY -->
-  <section class="section" data-aos="fade-up">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="assets/images/gallery1.webp" alt="Gallery Image 1" loading="lazy">
-      <img src="assets/images/gallery3.webp" alt="Gallery Image 3" loading="lazy">
-      <img src="assets/images/gallery4.webp" alt="Gallery Image 4" loading="lazy">
-      <img src="assets/images/gallery6.webp" alt="Gallery Image 6" loading="lazy">
+<section class="section" data-aos="fade-up">
+  <h2>Gallery</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/images/gallery1.webp" alt="Photo 1"></div>
+      <div class="swiper-slide"><img src="assets/images/gallery3.webp" alt="Photo 2"></div>
+      <div class="swiper-slide"><img src="assets/images/gallery4.webp" alt="Photo 3"></div>
+      <div class="swiper-slide"><img src="assets/images/gallery6.webp" alt="Photo 4"></div>
     </div>
-  </section>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <!-- Pagination below swiper -->
+  <div class="swiper-pagination"></div>
+</section>
 
   <!-- DRESS CODE -->
   <section class="section glass" data-aos="fade-up">
@@ -232,5 +244,23 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+  slidesPerView: 2,       // 2 images side by side
+  spaceBetween: 0,        // no space between slides
+  loop: true,
+  slidesPerGroup: 1,      // swipe 1 slide at a time
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+</script>
 </body>
 </html>

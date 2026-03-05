@@ -57,7 +57,7 @@ p { font-size: 1.1rem; line-height: 1.8; }
   object-fit: cover;
   position: absolute;
 }
-/*
+/* HERO */
 .overlay {
   position: relative;
   height: 100%;
@@ -69,7 +69,6 @@ p { font-size: 1.1rem; line-height: 1.8; }
   color: white;
   text-align: center;
 }
-*/
 
 .date { letter-spacing: 3px; margin: 20px 0; }
 #countdown { font-size: 1.6rem; margin-top: 10px; }
@@ -806,4 +805,38 @@ footer {
 /* Ultra Smooth Scroll (Apple style) */
 html{
 scroll-behavior:smooth;
+}
+
+
+/* Swiper container */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Each slide takes half width, no gap */
+.swiper-slide {
+  width: 50%;
+}
+
+/* Images fill the slide fully */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the slide without leaving space */
+  display: block;
+}
+
+/* Pagination below the images */
+.swiper-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Optional: arrows vertically centered on the images */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
 }
