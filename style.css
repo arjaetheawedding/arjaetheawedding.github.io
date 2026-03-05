@@ -828,33 +828,31 @@ scroll-behavior:smooth;
 }
 
 /* On mobile, make left/right images touch edges */
-/* SWIPER/GALLERY FIX FOR EDGE-TO-EDGE ON MOBILE */
+/* SWIPER/GALLERY EDGE-TO-EDGE FIX */
 @media (max-width: 768px) {
-
   .swiper {
-    padding: 0; /* remove any swiper padding */
-    margin: 0;  /* remove margin */
-    width: 100vw; /* full viewport width */
+    padding: 0 !important;        /* remove swiper padding */
+    margin: 0 !important;         /* remove swiper margin */
+    width: 100vw;                  /* full viewport width */
+  }
+
+  .swiper-wrapper {
+    margin-left: 0 !important;    /* remove extra left margin */
+    margin-right: 0 !important;   /* remove extra right margin */
   }
 
   .swiper-slide {
-    width: 50%; /* 2 images side by side */
-    padding: 0; /* remove any slide padding */
-    margin: 0;
+    width: 50% !important;        /* 2 images side by side */
+    padding: 0 !important;        /* no internal padding */
+    margin: 0 !important;         /* no extra margin */
   }
 
   .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0; /* pure box */
+    border-radius: 0;             /* sharp 4 corners */
     display: block;
-  }
-
-  /* Optional: make sure slides stick to edges */
-  .swiper-wrapper {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
 
