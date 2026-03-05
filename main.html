@@ -85,10 +85,10 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+<!-- GALLERY -->
 <section class="section" data-aos="fade-up">
   <h2>Gallery</h2>
-  <div class="swiper">
+  <div class="swiper gallery-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="assets/images/gallery1.webp" alt="Photo 1"></div>
       <div class="swiper-slide"><img src="assets/images/gallery3.webp" alt="Photo 2"></div>
@@ -99,13 +99,13 @@
     <!-- Navigation Arrows -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-  </div>
 
-  <!-- Pagination below swiper -->
-  <div class="swiper-pagination"></div>
+    <!-- Pagination below swiper -->
+    <div class="swiper-pagination"></div>
+  </div>
 </section>
 
-<!-- Our Journey -->
+<!-- OUR JOURNEY -->
 <section class="our-journey">
   <h2 class="section-title">Our Journey</h2>
 
@@ -288,11 +288,11 @@
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper('.swiper', {
-  slidesPerView: 2,       // 2 images side by side
-  spaceBetween: 0,        // no space between slides
+  const gallerySwiper = new Swiper('.gallery-swiper', {
+  slidesPerView: 2,       // always 2 images
+  spaceBetween: 0,        // no gap
   loop: true,
-  slidesPerGroup: 1,      // swipe 1 slide at a time
+  slidesPerGroup: 1,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -301,6 +301,11 @@
     el: '.swiper-pagination',
     clickable: true,
   },
+  breakpoints: {
+    0: { slidesPerView: 2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 2 }
+  }
 });
 </script>
 </body>

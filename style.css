@@ -808,41 +808,40 @@ scroll-behavior:smooth;
 }
 
 
-/* Swiper container */
-.swiper {
+/* ==================== GALLERY SWIPER ==================== */
+.gallery-swiper {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
-/* Each slide takes half width, no gap */
-.swiper-slide {
-  width: 50%;
+.gallery-swiper .swiper-slide {
+  width: 50%;           /* always 2 images per row */
+  height: auto;         /* maintain aspect ratio */
 }
 
-/* Images fill the slide fully */
-.swiper-slide img {
+.gallery-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fills the slide without leaving space */
+  object-fit: cover;    /* fills slide fully */
   display: block;
+  border-radius: 15px;
 }
 
-/* Pagination below the images */
-.swiper-pagination {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Optional: arrows vertically centered on the images */
+/* Swiper arrows */
 .swiper-button-next, .swiper-button-prev {
-  color: #fff;
+  color: #a35c73;
   top: 50%;
   transform: translateY(-50%);
 }
 
+/* Pagination dots */
+.swiper-pagination {
+  text-align: center;
+  margin-top: 15px;
+}
 
-/* OUR JOURNEY */
+/* ==================== JOURNEY SECTION ==================== */
 .our-journey {
   max-width: 1000px;
   margin: 0 auto;
@@ -850,64 +849,56 @@ scroll-behavior:smooth;
   font-family: 'Playfair Display', serif;
 }
 
-.our-journey .section-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 60px;
-  color: #5a3e49;
-}
-
 .journey-item {
   display: flex;
   align-items: center;
+  gap: 20px; /* smaller gap for mobile */
   margin-bottom: 60px;
-  gap: 40px;
+  flex-wrap: wrap; /* ensures text/image don't overflow */
 }
 
-/* Automatically alternate left/right */
+/* Alternate sides */
 .journey-item:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* Text container */
 .journey-text {
-  flex: 1;
+  flex: 1 1 45%;
   font-size: 1.25rem;
   line-height: 1.8;
   color: #333;
 }
 
-/* Align text horizontally based on left/right position */
-.journey-item:nth-child(odd) .journey-text {
-  text-align: right;
-}
-.journey-item:nth-child(even) .journey-text {
-  text-align: left;
-}
+/* Align text left/right */
+.journey-item:nth-child(odd) .journey-text { text-align: right; }
+.journey-item:nth-child(even) .journey-text { text-align: left; }
 
-/* Photo container */
 .journey-photo {
-  flex: 1;
+  flex: 1 1 45%;
   display: flex;
   justify-content: center;
 }
+
 .journey-photo img {
   max-width: 100%;
   border-radius: 15px;
   object-fit: cover;
 }
 
-/* Mobile responsiveness */
+/* ==================== MOBILE ==================== */
 @media (max-width: 768px) {
   .journey-item {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 20px;
+    gap: 15px;
   }
+
+  .journey-text, .journey-photo {
+    flex: 1 1 48%; /* still side by side */
+  }
+
   .journey-text {
-    text-align: center !important;
+    font-size: 1.1rem;
   }
+
   .journey-photo img {
     width: 100%;
     height: auto;
