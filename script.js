@@ -27,19 +27,6 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// FLOATING PARTICLES
-const particlesContainer = document.querySelector('.particles');
-
-for (let i = 0; i < 30; i++) {
-  const particle = document.createElement('div');
-  particle.style.left = Math.random() * 100 + 'vw';
-  particle.style.animationDuration = 8 + Math.random() * 6 + 's';
-  particle.style.width = 4 + Math.random() * 6 + 'px';
-  particle.style.height = particle.style.width;
-  particle.style.opacity = Math.random();
-  particlesContainer.appendChild(particle);
-}
-
 // SCROLL PROGRESS
 window.addEventListener('scroll', () => {
   const scrollTop = document.documentElement.scrollTop;
@@ -49,12 +36,11 @@ window.addEventListener('scroll', () => {
 });
 
 // LOADER
-window.addEventListener('load', () => {
+window.addEventListener("load", function() {
+  document.getElementById("loader").style.opacity = "0";
   setTimeout(() => {
-    const loader = document.getElementById('loader');
-    loader.style.opacity = '0';
-    setTimeout(() => { loader.style.display = 'none'; }, 1000);
-  }, 1500);
+    document.getElementById("loader").style.display = "none";
+  }, 800);
 });
 
 // MUSIC TOGGLE
@@ -135,4 +121,21 @@ window.addEventListener('scroll', () => {
 });
 document.querySelector('.youtube-thumb').addEventListener('click', () => {
   window.open('https://www.youtube.com/watch?v=7jae0MwePuI', '_blank');
+});
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+// Ultra Smooth Scroll (Apple style)
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
 });
