@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arjae & Thea | Wedding</title>
+  <title>Arjae & Thea | Invitation</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,216 +19,144 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload hero image -->
-  <link rel="preload" as="image" href="assets/images/cover.webp">
+  <style>
+    /* FULLSCREEN INVITATION */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    .invitation-card {
+  height: 100vh;
+  width: 100%;
+  background: url('assets/images/cover.webp') center/cover no-repeat;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  justify-content: flex-start; /* align to top */
+  align-items: center; /* horizontally center */
+  padding: 50px 20px 0 20px; /* top padding gives space from top */
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.invitation-content {
+  width: 100%; /* full width */
+  max-width: none; /* remove previous max-width */
+  padding: 25px 0; /* keep vertical padding, horizontal removed to span full width */
+  background: rgba(0,0,0,0.35);
+  border-radius: 0; /* remove rounded corners to fit full width */
+  backdrop-filter: blur(5px);
+  text-align: center;
+  animation: fadeInDown 1.5s ease forwards;
+}
+
+    /* NAMES WITH DIVIDER */
+    .invitation-names-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .invitation-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .invitation-divider .line {
+      flex: 1;
+      height: 2px;
+      background: white;
+    }
+
+    .invitation-divider .amp {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .invitation-names {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .invitation-date {
+      font-size: 1.2rem;
+      margin: 25px 0;
+      letter-spacing: 1px;
+    }
+
+.open-invitation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* space between icon and text */
+  padding: 15px 45px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #c48b9f, #a35c73);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 15px 35px rgba(196,139,159,0.4);
+  transition: all 0.3s ease;
+}
+
+.open-invitation:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 45px rgba(196,139,159,0.6);
+}
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .invitation-names {
+        font-size: 2rem;
+      }
+      .invitation-divider .amp {
+        font-size: 1.5rem;
+      }
+      .invitation-date {
+        font-size: 1rem;
+      }
+      .open-invitation {
+        padding: 12px 35px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-content">
-      <h1>Arjae & Thea</h1>
-      <p>November 26, 2027</p>
-    </div>
+<div class="invitation-card">
+  <div class="invitation-content" data-aos="fade-down">
+    <div class="invitation-names">Arjae</div>
+    <div class="invitation-amp">&mdash; &amp; &mdash;</div>
+    <div class="invitation-names">Thea</div>
+    <div class="invitation-date">November 26, 2027</div>
+    <a href="index.html" class="open-invitation">
+      <i class="fa fa-envelope" style="margin-right: 8px;"></i> Open Invitation
+    </a>
   </div>
+</div>
 
-  <!-- SCROLL PROGRESS BAR -->
-  <div id="progress-bar"></div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <img src="assets/images/cover.webp" alt="Wedding Cover" class="hero-img">
-
-    <div class="overlay">
-      <h1 class="hero-title" data-aos="fade-up">Arjae & Thea</h1>
-      <p class="date" data-aos="fade-up" data-aos-delay="200">November 26, 2027</p>
-
-      <!-- Countdown -->
-      <div id="countdown" class="countdown" data-aos="fade-up" data-aos-delay="400">
-        <div class="countdown-item"><span class="count">0</span><span class="label">Days</span></div>
-        <div class="countdown-item"><span class="count">0</span><span class="label">Hours</span></div>
-        <div class="countdown-item"><span class="count">0</span><span class="label">Minutes</span></div>
-        <div class="countdown-item"><span class="count">0</span><span class="label">Seconds</span></div>
-      </div>
-
-      <a href="#rsvp" class="btn hero-btn" data-aos="fade-up" data-aos-delay="600">RSVP</a>
-    </div>
-  </section>
-
-  <!-- OUR STORY -->
-  <section class="section" data-aos="fade-up">
-    <h2>Our Story</h2>
-    <p>We met unexpectedly, became best friends, and found love in the simplest moments. Through seasons of growth and faith, we discovered that we were meant to walk this life together.</p>
-  </section>
-
-  <!-- CINEMATIC VIDEO -->
-  <section class="cinematic-video vimeo-video" data-aos="fade-up">
-    <div class="vimeo-container">
-      <iframe 
-        loading="lazy"
-        id="vimeo-player"
-        src="https://player.vimeo.com/video/1169988915?title=0&byline=0&portrait=0&controls=1" 
-        frameborder="0" 
-        allow="autoplay; fullscreen; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="video-caption" data-aos="fade-up" data-aos-delay="200">
-      <h2>Our Love Story</h2>
-      <p>A glimpse into our journey together</p>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section" data-aos="fade-up">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="assets/images/gallery1.webp" alt="Gallery Image 1" loading="lazy">
-      <img src="assets/images/gallery3.webp" alt="Gallery Image 3" loading="lazy">
-      <img src="assets/images/gallery4.webp" alt="Gallery Image 4" loading="lazy">
-      <img src="assets/images/gallery6.webp" alt="Gallery Image 6" loading="lazy">
-    </div>
-  </section>
-
-  <!-- DRESS CODE -->
-  <section class="section glass" data-aos="fade-up">
-    <h2>Dress Code</h2>
-    <p class="subtext">We want everyone to look their best! Please follow the guidelines below:</p>
-    <div class="dress-codes-grid">
-      <div class="dress-group">
-        <h3>Do's</h3>
-        <div class="dress-labels">
-          <span>Men</span><span>Women</span>
-        </div>
-        <div class="dress-images">
-          <img src="assets/images/do1.webp" alt="Do Men 1" loading="lazy">
-          <img src="assets/images/do2.webp" alt="Do Women 1" loading="lazy">
-          <img src="assets/images/do3.webp" alt="Do Men 2" loading="lazy">
-          <img src="assets/images/do4.webp" alt="Do Women 2" loading="lazy">
-        </div>
-      </div>
-      <div class="dress-group">
-        <h3>Don'ts</h3>
-        <div class="dress-labels">
-          <span>Men</span><span>Women</span>
-        </div>
-        <div class="dress-images">
-          <img src="assets/images/dont1.webp" alt="Don't Men 1" loading="lazy">
-          <img src="assets/images/dont2.webp" alt="Don't Women 1" loading="lazy">
-          <img src="assets/images/dont3.webp" alt="Don't Men 2" loading="lazy">
-          <img src="assets/images/dont4.webp" alt="Don't Women 2" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGISTRY & GIFTS -->
-  <section class="section gifts-section" data-aos="fade-up">
-    <h2>Registry & Gifts</h2>
-    <p>Your presence at our wedding is the greatest gift of all.</p>
-    <div class="gift-container no-bg">
-      <div class="bank-details">
-        <p><strong>Bank:</strong> BPI</p>
-        <p><strong>Account Name:</strong> Arjae Del Rosario</p>
-        <p><strong>Account Number:</strong> 1234 5678 9012</p>
-      </div>
-      <div>
-        <img src="assets/images/bank-qr.png" alt="Bank QR Code" class="qr-image" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ENTourage -->
-  <section class="section glass" data-aos="fade-up" id="entourage">
-    <h2>Entourage</h2>
-    <p>The wonderful people standing by our side on our special day:</p>
-    <div class="entourage-container">
-      <img src="assets/images/entourage.jpg" alt="Wedding Entourage" class="entourage-image" loading="lazy">
-    </div>
-  </section>
-
-  <!-- Interstitial Images -->
-  <section class="fullwidth-image" data-aos="fade-up">
-    <img src="assets/images/gallery2.webp" alt="Couple Image 1" class="interstitial-img" loading="lazy">
-  </section>
-
-  <!-- EVENT SCHEDULE -->
-  <section class="section glass" data-aos="fade-up">
-    <h2>Event Schedule</h2>
-    <p class="subtext">Mark your calendars for the big day!</p>
-    <div class="schedule">
-      <div class="event-card">
-        <img src="assets/images/church.webp" alt="Church Location" loading="lazy">
-        <div class="event-info">
-          <h3>Ceremony <span class="badge">4:00 PM</span></h3>
-          <p>Parish of the Immaculate Heart of Mary<br>Antipolo City, Rizal</p>
-          <a href="https://www.google.com/maps?q=Parish+of+the+Immaculate+Heart+of+Mary+Antipolo" target="_blank" class="btn-small">View Map</a>
-        </div>
-      </div>
-      <div class="event-card">
-        <img src="assets/images/reception.webp" alt="Reception Location" loading="lazy">
-        <div class="event-info">
-          <h3>Reception <span class="badge">6:00 PM</span></h3>
-          <p>The Garden Hive Events Place<br>Antipolo City, Rizal</p>
-          <a href="https://maps.app.goo.gl/sYUdD5PjLdVrB3ey9" target="_blank" class="btn-small">View Map</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="fullwidth-image" data-aos="fade-up">
-    <img src="assets/images/gallery5.webp" alt="Couple Image 2" class="interstitial-img" loading="lazy">
-  </section>
-
-  <!-- FAQ -->
-  <section class="section glass" data-aos="fade-up">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item">
-        <button class="faq-question">What is the dress code?</button>
-        <div class="faq-answer">
-          <p>Formal attire is preferred. Please avoid white or off-white tones.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I bring a plus one?</button>
-        <div class="faq-answer">
-          <p>Please RSVP individually. Plus ones are allowed only if indicated in the invitation.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Where should I park?</button>
-        <div class="faq-answer">
-          <p>Parking is available at the venue. Follow the signs for guest parking areas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section id="rsvp" class="section rsvp-section" data-aos="fade-up">
-    <h2>RSVP</h2>
-    <a href="https://forms.gle/hrAmqvdcCH5WxZmt9" target="_blank" class="btn">Confirm Attendance</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>With love, Arjae & Thea</p>
-  </footer>
-
-  <!-- MUSIC BUTTON -->
-  <button id="music-toggle" aria-label="Toggle Music">
-    <i class="fa fa-music"></i>
-  </button>
-
-  <!-- BACKGROUND MUSIC -->
-  <audio id="bg-music" loop>
-    <source src="assets/music/song.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Scripts -->
+  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+  </script>
+
 </body>
 </html>
