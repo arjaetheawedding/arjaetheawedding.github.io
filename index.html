@@ -8,16 +8,72 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- AOS Animation -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <!-- Preload the Background Image -->
+  <link rel="preload" as="image" href="assets/images/invitation.webp">
+
+  
+
+  <style>
+/* CRITICAL CSS FOR INSTANT RENDER */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.invitation-card{
+  height:100vh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  padding:50px 20px 0;
+  text-align:center;
+  color:white;
+  background:#000;
+}
+
+.invitation-content{
+  width:100%;
+  padding:25px 0;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(5px);
+}
+
+.invitation-names{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.invitation-date{
+  margin:20px 0;
+}
+
+.open-invitation{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:15px 45px;
+  border-radius:50px;
+  background:linear-gradient(45deg,#c48b9f,#a35c73);
+  color:white;
+  text-decoration:none;
+}
+</style>
+
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
 
   <style>
     /* FULLSCREEN INVITATION */
@@ -29,15 +85,20 @@
       overflow: hidden;
     }
 
-    .invitation-card {
+.invitation-card {
+  background-color: #000; /* fallback while image loads */
+  background-image: url('assets/images/invitation.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   height: 100vh;
   width: 100%;
-  background: url('assets/images/invitation.webp') center/cover no-repeat;
   display: flex;
-  flex-direction: column; /* stack children vertically */
-  justify-content: flex-start; /* align to top */
-  align-items: center; /* horizontally center */
-  padding: 50px 20px 0 20px; /* top padding gives space from top */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 20px 0 20px;
   position: relative;
   text-align: center;
   color: white;
@@ -141,7 +202,7 @@
 <body>
 
 <div class="invitation-card">
-  <div class="invitation-content" data-aos="fade-down">
+  <div class="invitation-content">
     <div class="invitation-names">Arjae</div>
     <div class="invitation-amp">&mdash; &amp; &mdash;</div>
     <div class="invitation-names">Thea</div>
@@ -153,7 +214,6 @@
 </div>
 
   <!-- AOS Animation -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1200, once: true });
   </script>
