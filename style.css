@@ -827,53 +827,68 @@ scroll-behavior:smooth;
   border-radius: 0;
 }
 
+.gallery-section {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
 /* On mobile, make left/right images touch edges */
 /* SWIPER/GALLERY FIX FOR EDGE-TO-EDGE ON MOBILE */
 /* On mobile, make left/right images touch edges */
 /* SWIPER/GALLERY FIX FOR EDGE-TO-EDGE ON MOBILE */
 /* --- GALLERY FIX: No left/right gaps, 2 images full width --- */
 /* SWIPER / GALLERY */
+/* SWIPER container */
 .swiper {
-  width: 100%;         /* full width of container on desktop */
-  margin: 0 auto;
+  width: 100vw;        /* full viewport width */
+  max-width: 100vw;    /* ensure no extra width */
+  margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden;    /* hide any overflow */
+  box-sizing: border-box;
 }
 
+/* SWIPER wrapper */
 .swiper-wrapper {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
+/* Each slide */
 .swiper-slide {
-  flex: 0 0 50%;      /* 2 slides per view on desktop */
+  flex: 0 0 50%;       /* 2 slides per view */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Slide image */
 .swiper-slide img {
   width: 100%;
-  height: auto;       /* preserve aspect ratio */
-  object-fit: cover;  /* fill width of slide */
+  height: 100%;
+  object-fit: cover;   /* fill the slide */
   display: block;
-  border-radius: 0;    /* sharp corners */
+  border-radius: 0;    /* no curves */
 }
 
-/* Pagination & Navigation */
-.swiper-pagination {
-  text-align: center;
-  margin-top: 10px;
-}
-
+/* Arrows */
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;         /* make sure arrows are above images */
 }
 
-/* MOBILE FIX: EDGE-TO-EDGE */
+/* Pagination */
+.swiper-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* MOBILE: ensure slides touch edges */
 @media (max-width: 768px) {
   .swiper {
     width: 100vw;      /* full viewport width */
@@ -881,15 +896,8 @@ scroll-behavior:smooth;
     padding: 0;
   }
 
-  .swiper-wrapper {
-    margin: 0;
-    padding: 0;
-  }
-
   .swiper-slide {
-    flex: 0 0 50%;      /* 2 slides per view */
-    margin: 0;
-    padding: 0;
+    flex: 0 0 50%;      /* 2 slides per view on mobile */
   }
 
   .swiper-slide img {
